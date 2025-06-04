@@ -19,10 +19,10 @@ This task's goals are:
   - Aim for a minimal repository size that can be cloned and installed: most of the files in github should be code and package dependencies (add package.json, index.html).
   - Don't submit (add to git) .env (it's your secret file which includes passwords- add to gitignore), node_modules dir, package-lock.json, or note json files.
   - the submission commit will be tagged as "submission_hw3".
-  - to test your submission, run the presubmission script (in github). A submission that does not pass the presubmission script, gets a 0 score automatically.
+  - to test your submission, run the presubmission script (in github ). A submission that does not pass the presubmission script, gets a 0 score automatically.
       For example: 
       ```bash
-      bash presubmission_hw- sh git@github.com:bgu-frontend/hw1_202- git <full_.env_path>/.env
+      bash presubmission.sh git@github.com:bgu-frontend/hw3_2025.git <full_.env_path>/.env
       ``` 
       - Tip: You can use a local git directory as the target git repository.
       - Tip: You can make the presubmission script to run automatically during every git push.
