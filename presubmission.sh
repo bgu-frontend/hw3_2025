@@ -19,7 +19,7 @@ if [ $? -ne 0 ]; then
 fi
 
 cd repo || exit 1
-git checkout submission_hw2
+git checkout submission_hw3
 cp "$2" ./backend/.env || { echo "Failed to copy .env file"; exit 1; }
 
 # Define the expected structure
