@@ -91,7 +91,7 @@ In react, implement the following caching mechanism:
 
 ## Frontend requirements
 - **Routes description**
-  - The application will have the following routes: (optional: use react dom router)
+  - The application will have the following routes: (see react dom router)
     - `/` – Homepage: the same page we saw on the previous exercises, can be seen by all users, even if they did not log in.
   The homepage (when user is not logged in) will show **navigation buttons** that redirect to the login and create user pages:
         - **Login page button**:
@@ -103,7 +103,7 @@ In react, implement the following caching mechanism:
     
     - `/login` – Login page containing the login form.
     - `/create-user` – Create User page containing the registration form.
-
+- **Components' description**
     - **Logout button** (`/` homepage when logged in):
         - `data-testid`: **"logout"**
         - Behavior:
@@ -115,32 +115,33 @@ In react, implement the following caching mechanism:
         - this button will appear only when logged in. 
         - Naturally, the created note will include the current user's details.
         - Other than that, it's identical to the previous exercise.
+          
     - **Create User form** (`/create-user` route):
-    - `data-testid` for form: **"create_user_form"**
-    - Fields:
-        - `Name`, `data-testid`: **"create_user_form_name"**
-        - `Email`, `data-testid`: **"create_user_form_email"**. The email doesn't need to be verified for uniqueness or correctness.
-        - `Username`, `data-testid`: **"create_user_form_username"**
-        - `Password`, `data-testid`: **"create_user_form_password"**
-    - Create User button: (submit)
-        - Text: `Create User`
-        - `data-testid`: **"create_user_form_create_user"**
-    - Behaviour: the user is saved in the database, and redirected back to the homepage (while still logged out).
+      - `data-testid` for form: **"create_user_form"**
+      - Fields:
+          - `Name`, `data-testid`: **"create_user_form_name"**
+          - `Email`, `data-testid`: **"create_user_form_email"**. The email doesn't need to be verified for uniqueness or correctness.
+          - `Username`, `data-testid`: **"create_user_form_username"**
+          - `Password`, `data-testid`: **"create_user_form_password"**
+      - Create User button: (submit)
+          - Text: `Create User`
+          - `data-testid`: **"create_user_form_create_user"**
+      - Behaviour: the user is saved in the database, and redirected back to the homepage (while still logged out).
 
     - **Login form** (`/login` route):
-    - `data-testid` for form: **"login_form"**
-    - Fields:
-        - `Username`, `data-testid`: **"login_form_username"**
-        - `Password`, `data-testid`: **"login_form_password"**
-    - Submit button:
-        - Text: `Login`
-        - `data-testid`: **"login_form_login"**
-    - Behaviour: a succesful login redirects the user to the home page, and he/she are now logged in. A failed attempt will print an error of your choice to the user, while staying in the same page.
-        
-    - Token behavior:
-        - After login, the token is saved in React state.
-        - All authenticated API requests will send the token via an `'Authorization'` header.
-        - _Note: While the flowchart which we've seen in class explains that the token should be saved without exposing it to frontend JavaScript, Full Stack Open actual code stores it in the frontend state — this is for educational purposes, but not secure as HTTP-only cookies._
+      - `data-testid` for form: **"login_form"**
+      - Fields:
+          - `Username`, `data-testid`: **"login_form_username"**
+          - `Password`, `data-testid`: **"login_form_password"**
+      - Submit button:
+          - Text: `Login`
+          - `data-testid`: **"login_form_login"**
+      - Behaviour: a succesful login redirects the user to the home page, and he/she are now logged in. A failed attempt will print an error of your choice to the user, while staying in the same page.
+          
+      - Token behavior:
+          - After login, the token is saved in React state.
+          - All authenticated API requests will send the token via an `'Authorization'` header.
+          - _Note: While the flowchart which we've seen in class explains that the token should be saved without exposing it to frontend JavaScript, Full Stack Open actual code stores it in the frontend state — this is for educational purposes, but not secure as HTTP-only cookies._
    
 
 
