@@ -86,7 +86,6 @@ In react, implement the following caching mechanism:
     -  Also, asynchronically in the background, the frontend will get the minimal amount of pages needed. For example, when moving from page 5 to 6, only one page should be fetched, since the rest are already in the cache.
         - It's ok to have 5 fetches of 10 notes each, instead of one fetch of 50 notes; it's ok to use the existing 10-notes fetching API.
 -  Examples:
-    - The first page should be in the cache after build, and not be brought when the user first enters the website.
     -  Moving from page 1 to 2 should not fetch new data to the cache.
 
 
