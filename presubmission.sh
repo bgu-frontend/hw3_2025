@@ -24,7 +24,7 @@ cd repo || exit 1
 git checkout submission_hw3 2>/dev/null || echo "Branch 'submission_hw3' not found. Using default branch."
 
 # Copy .env to root
-cp "$ENV_FILE" .env || { echo "Failed to copy .env file"; exit 1; }
+cp "$2" ./backend/.env || { echo "Failed to copy .env file"; exit 1; }
 
 # Install dependencies
 cd backend || { echo "Missing backend directory"; exit 1; }
@@ -48,7 +48,7 @@ done
 
 # Start backend
 cd backend
-npm run backend > ../backend.log 2>&1 &
+npm run dev > ../backend.log 2>&1 &
 BACK_PID=$!
 cd ..
 sleep 2
@@ -57,7 +57,6 @@ sleep 2
 cd frontend
 npm run dev > ../frontend.log 2>&1 &
 FRONT_PID=$!
-cd ..
 sleep 2
 
 # Playwright tests
@@ -87,7 +86,6 @@ export default defineConfig({
 });
 EOF
 
-cd frontend
 npx playwright test || {
   echo "Test failed."
   kill $BACK_PID $FRONT_PID
